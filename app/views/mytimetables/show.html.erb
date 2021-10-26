@@ -6,20 +6,19 @@
     <div id="canvas">
       <h1><%= @festival.name %></h1>
     </div>
-    <p><%= @festivalday.date %>日目</p>
+    
+    <div class="festivalday">
+      <p><%= @festivalday.date %>日目</p>
+    </div>
     
     <div class="table">
       <div class="table__head">
-        
-  
       <% @stages.each do |stage| %>
           <div class="table__heading">
             <%= stage.name %>
           </div>
       <% end %>
       </div>
-      
-  
       
       <div class="table__body" style="height: <%= computedTableBodyHeight %>px">
         <% @festivalday.stages.each do |stage| %>
