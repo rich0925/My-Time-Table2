@@ -1,7 +1,3 @@
-<p>festivalのページです</p>
-
-
-
 <div class="top-hero-wrapper text-center">
   <div class="container top-hero-container">
     <div class="title">
@@ -16,112 +12,8 @@
     <% @festivals.each do |festival| %>
         <%= link_to festival.name , festival_path(festival.id) , class: 'btn btn-block btn-white' %>
     <% end %>
-    
-
-    
-    <br>
-    <br>
-    
-    <div class="title-mytimetable">
-      <h1 class="text-brack">My Time Table</h1>
-      <h2 class="text-brack">自分だけのタイムテーブルを作ろう！！</h2>
     </div>
 
-    <div class="Artist-Select">
-    <label for="Artist">選択してください</label>
-    <select id="festivals">
-      <option value="rock in japan festival">ROCK IN JAPAN FESTIVAL</option>
-      <option value="rising sun rock festival">RISING SUN ROCK FESTIVAL</option>
-      <option value="fuji rock festival">FUJI ROCK FESTIVAL</option>
-      <option value="summer sonic">SUMMER SONIC</option>
-      <option value="countdown japan">COUNTDOWN JAPAN</option>
-      <option value="radio crazy">RADIO CRAZY</option>
-      <option value="viva la rock">VIVA LA ROCK</option>
-      <option value="japan jam">JAPAN JAM</option>
-      <option value="metropolitan rock festival">METROPOLITAN ROCK FESTIVAL</option>
-    </select>
-    
-    
-
-    
-    </div>
-
-    <script>
-      let selector = document.querySelector('#festivals');
-      selector.addEventListener('change', (event) => {
-      let box = document.querySelector('#box');
-      box.textContent = event.target.value;
-    });
-    </script>
-    
-    <div class="input-mytimetable">
-    
-    <div id="box"></div>
-
-
-    
-    
-    <div id="input_pluralBox">
-      <div id="input_plural">
-        
-    
-    <div class="row">
-      <form action="/sample" method="post">
-      <div class="col-md-4">
-        <table>
-          <tr>
-            <div class="Time-title">
-            <label>time</label><br>
-              <div class="Time-select">
-                <th><input type="time" name="smp01" class="time-title" value="10:00" style="font-size:40px;"></th>
-              </div>
-            </div>
-          </tr>
-        </table>
-      </div>
-      <div class="col-md-4">
-        <div class="Artist-title">
-          <p>Artist<br>
-          <% if !@artist.nil? %>
-            <p><%= @artist.name %></p>
-          <% end %>
-           <%= link_to 'アーティスト', artists_path %></p>
-        </div>
-      </div>
-       <div class="col-md-4">
-        <div class="Stage-title">
-          <p>Stage<br>
-          <input type="text" name="name" class="stage-title"></p>
-        </div>
-      </div>
-    </div>
-    
-      </div>
-    </div>
-    
-    <input type="button" value="＋" class="add pluralBtn">
-    <input type="button" value="－" class="del pluralBtn">
-    
-    <script type="text/javascript">
-    $(document).on("click", ".add", function() {
-        $(this).parent().clone(true).insertAfter($(this).parent());
-    });
-    $(document).on("click", ".del", function() {
-        var target = $(this).parent();
-        if (target.parent().children().length > 1) {
-            target.remove();
-        }
-    });
-    </script>
-    
-    
-    
-    <script>
-      
-    </script>
-  </div>
-</div>
-</div>
 <h1 class="text-brack">
   <%= link_to "artist登録" , new_artist_path, class: 'btn btn-block btn-brack' %>
 </h1>
