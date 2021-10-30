@@ -8,8 +8,10 @@
         <p>タイムテーブル作成</p>
     </div>
     
-    <p>日付</p>
-        <% @festival.festivaldays.each do |festivalday| %>
-            <%= link_to festivalday.date, festival_festivalday_mytimetable_path(@festival.id, festivalday.id )  , class: 'btn btn-block btn-white' %>
-        <% end %>
+    <h1>Days</h1>
+        <div align="center">
+            <% @festival.festivaldays.each do |festivalday| %>
+                <%= link_to festivalday.date, festival_festivalday_mytimetable_path(@festival.id, festivalday.id )  , class: 'btn btn-block fesshow-btn-white' %>
+            <% end %>
+        </div>
 </div>

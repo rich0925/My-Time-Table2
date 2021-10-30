@@ -19,30 +19,30 @@
         <%= link_to root_path do %>
           <p class="header-top-title navbar-left">my time table</p>
         <% end %>
-        <ul class="header-user-operation nav navbar-nav navbar-right">
-              <% if logged_in? %>
-                <div class="header-user-name">
-                  <p>「<%= current_user.name %>」がログイン中</p>
-                </div>
-                <li>
-                  <%= link_to logout_path, method: :delete do %>
-                    <p>log out</p>
-                  <% end %>
-                </li>
+        <!--<ul class="header-user-operation nav navbar-nav navbar-right">-->
+        <!--      <% if logged_in? %>-->
+        <!--        <div class="header-user-name">-->
+        <!--          <p>「<%= current_user.name %>」がログイン中</p>-->
+        <!--        </div>-->
+        <!--        <li>-->
+        <!--          <%= link_to logout_path, method: :delete do %>-->
+        <!--            <p>log out</p>-->
+        <!--          <% end %>-->
+        <!--        </li>-->
                 
-              <% else %>
-                <li>
-                  <%= link_to new_user_path do %>
-                    <p>sign up</p>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to login_path do %>
-                    <p>log in</p>
-                  <% end %>
-                </li>
-              <% end %>
-            </ul>
+        <!--      <% else %>-->
+        <!--        <li>-->
+        <!--          <%= link_to new_user_path do %>-->
+        <!--            <p>sign up</p>-->
+        <!--          <% end %>-->
+        <!--        </li>-->
+        <!--        <li>-->
+        <!--          <%= link_to login_path do %>-->
+        <!--            <p>log in</p>-->
+        <!--          <% end %>-->
+        <!--        </li>-->
+        <!--      <% end %>-->
+        <!--    </ul>-->
           </div>
         </nav>
 

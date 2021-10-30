@@ -1,7 +1,21 @@
 <div class="title">
   <h1>artist編集</h1>
-  <%= form_for @artist do |f| %>
-  <%= f.text_field :name %>
-        <%= f.submit "更新" %>
-  <% end %>
 </div>
+
+<%= form_for @artist do |f| %>
+  <p>
+    <%= f.label :name, "artist name" %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :stage_id, "stage_id" %><br>
+    <%= f.text_field :stage_id %><br>
+    <%= f.label :starttime, "starttime" %><br>
+    <%= f.text_field :starttime %><br>
+    <%= f.label :endtime, "endtime" %><br>
+    <%= f.text_field :endtime %><br>
+    <%= f.label :appearancetime, "appearancetime" %><br>
+    <%= f.text_field :appearancetime %><br>
+    <%= f.label :totalstarttime, "totalstarttime" %><br>
+    <%= f.text_field :totalstarttime %><br>
+  </p>
+    <%= f.submit "更新" %>
+<% end %>

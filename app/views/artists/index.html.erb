@@ -1,10 +1,27 @@
 <div class="title">
   <h1>Artists#index</h1>
 </div>
-
-<% @artists.each do |artist| %>
-  <%= artist.id %>：<%= artist.name %>：<%= artist.stage_id %>：<%= artist.starttime %>：<%= artist.endtime %>：<%= artist.appearancetime %>：<%= artist.totalstarttime %>
-  <%= link_to "削除", artist_path(artist.id), method: :delete %>
-  <%= link_to "編集", edit_artist_path(artist.id) %>
-  <br>
-<% end %>
+<div class="artist-list">
+  <% @artists.each do |artist| %>
+    <%= artist.id %>：<%= artist.name %>：<%= artist.stage_id %>：
+    
+    <% if !artist.starttime.nil? %>
+      <%= artist.starttime.strftime( "%H:%M" ) %>
+    <% else %>
+      <%= artist.starttime %>
+    <% end %>：
+    
+    <% if !artist.endtime.nil? %>
+      <%= artist.endtime.strftime( "%H:%M" ) %>
+    <% else %>
+      <%= artist.endtime %>
+    <% end %>：
+    
+    <%= artist.appearancetime %>：<%= artist.totalstarttime %>
+    ・・・
+    <%= link_to "削除", artist_path(artist.id), method: :delete %>
+    <%= link_to "編集", edit_artist_path(artist.id) %>
+    <br>
+    <br>
+  <% end %>
+</div>
